@@ -87,7 +87,6 @@ if( (a > 2 & a < 11) || (b >= 6 && b < 14 ) ){
 */
 /*
 const num = Math.floor(Math.random() * 4) + 1;
-console.log (num);
 let result;
 switch (num){
 	case 1:

@@ -11,11 +11,16 @@ let userAge = prompt ( 'Введите год своего рождения.' );
 if( userAge === null ){
 	alert ( 'Жаль, что Вы не захотели ввести свой год рождения.' );
 	userAge = 'надо было ввести год рождения';
+}else if( userAge.trim() === '' || isNaN( +userAge ) ) {
+    userAge = 'надо было ввести год рождения';
+}else if( userAge === null ){
+	alert ( 'Жаль, что Вы не захотели ввести свой год рождения.' );
 }else{
 	userAge = currentYear - userAge;
 }
+
 let userCity = prompt ( 'В каком городе Вы живете?' );
-if( userCity === null ){
+if( userCity === null || userCity.trim() === '' ){
 	alert ( 'Жаль, что Вы не захотели ввести название города, в котором живете.' );
 	userCity = '- призраке, судя по всему';
 }
@@ -23,7 +28,7 @@ let userSportsInterest = prompt ( 'Какой ваш любимый вид сп�
 if( userSportsInterest === null ){
 	alert ( 'Жаль, что Вы не захотели ввести свой любимый вид спорта.' );
 	userSportsInterest = ' жирдяем.';
-}else if ( champions[userSportsInterest] != undefined ){
+}else if ( champions[userSportsInterest.toLowerCase()] != undefined ){
 	userSportsInterest = ', как ' + champions[userSportsInterest.toLowerCase()];
 }else{
 	userSportsInterest = ' споротсменом.';
