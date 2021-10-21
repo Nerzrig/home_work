@@ -8,7 +8,7 @@ if( numOrStr === null || numOrStr.trim() === '' || isNaN( +numOrStr ) ) {
     console.log('OK!');
 }
 */
-
+/*
 const numOrStr = prompt('input number or string');
 console.log ( numOrStr, typeof numOrStr );
 
@@ -16,7 +16,7 @@ switch (true){
 	case numOrStr === null:
 		alert ( 'Ну и пожалуйста. Не нужны мне твои данные, чумба!' );
 		break;
-	case (numOrStr.trim() === ''):
+	case numOrStr.trim() === '':
 		alert ( 'Пустой строкой сыт не будешь так-то...' );
 		break;
 	case isNaN( +numOrStr ):
@@ -26,3 +26,4 @@ switch (true){
 		alert ( 'Судя по всему, ты ввел число. Возьми с полки пирожок, жирдяй!' );
 		break;
 }
+*/
