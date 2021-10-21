@@ -12,7 +12,7 @@ if( userAge === null ){
 	alert ( 'Жаль, что Вы не захотели ввести свой год рождения.' );
 	userAge = 'надо было ввести год рождения';
 }else if( userAge.trim() === '' || isNaN( +userAge ) || currentYear - userAge < 0 ) {
-    userAge = 'надо было ввести год рождения циферками';
+    userAge = 'надо было ввести СВОЙ год рождения';
 }else{
 	userAge = currentYear - userAge;
 }
