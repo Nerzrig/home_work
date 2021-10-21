@@ -49,7 +49,7 @@ if ( !(a === null || a.trim() === '' || isNaN( +a )) ){
 const firstNum = +prompt ( 'Введите первое число ' );
 const secondNum = +prompt ( 'Введите второе число ' );
 const thirdNum = +prompt ( 'Введите третье число' );
-if ( firstNum > secondNum & firstNum > thirdNum){
+if ( firstNum > secondNum && firstNum > thirdNum){
 	alert ( `Максимальное значение ${firstNum}` );
 }else{
 	if ( secondNum > thirdNum ){
@@ -64,14 +64,15 @@ if ( firstNum > secondNum & firstNum > thirdNum){
 const a = +prompt ( 'Введите длину первой стороны треугольника' );
 const b = +prompt ( 'Введите длину второй стороны треугольника ' );
 const c = +prompt ( 'Введите длину третьей стороны треугольника' );
-if( a > 0 & b > 0 & c > 0)
+
+if( a > 0 && b > 0 && c > 0)
 {
-	if( a + b > c){
-		alert (`Треугольник с длинами сторон ${a}, ${b}, ${c} может сущестовать`);
-	}else if( a + c > b ){
-		alert (`Треугольник с длинами сторон ${a}, ${b}, ${c} может сущестовать`);
-	}else if( b + c > a ){
-		alert (`Треугольник с длинами сторон ${a}, ${b}, ${c} может сущестовать`);
+	if( a + b > c ){
+		if( a + c > b ){
+			if( b + c > a ){
+				alert (`Треугольник с длинами сторон ${a}, ${b}, ${c} может сущестовать`);
+			}
+		}
 	}else{
 		alert (`Треугольник с длинами сторон ${a}, ${b}, ${c} не может сущестовать`);
 	}
