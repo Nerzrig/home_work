@@ -8,7 +8,7 @@ for ( let i = 2; i < num; i++ ) {
 	}
 }
 if( flag ){
-	console.log(`Число ${num} простое.`);
+	console.log(`Число ${num} простое; // ${flag}. `);
 }else{
-	console.log(`Число ${num} составное.`);
+	console.log(`Число ${num} составное // ${flag}.`);
 }
