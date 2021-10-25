@@ -1,6 +1,6 @@
 const num = +prompt ( 'Введите число ' );
 let i = 2;
-for (; i <= num; i++) {
+for (; i < num; i++) {
 	if (num % i === 0) {
 		break;
 	}
