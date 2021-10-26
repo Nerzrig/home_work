@@ -1,4 +1,11 @@
-const x = 4;
-const y = 9;
-const r = 10;
-Math.sqrt( (x**2 + y**2) < r**2 ) ? console.log ( `Точка в пределах окружности` ): console.log ( `Точка вне окружности` );
+function numPow(num, numP = 1){
+    if(num === null || numP === null){
+        return 'You canceled data entry!';
+    }
+    if(num.trim() === '' || isNaN(+num) || numP.trim() === '' || isNaN(+numP)){
+        return 'Invalid data!';
+    }
+    console.log(numP);
+    return num ** numP;
+}
+console.log(numPow(prompt('Enter number:'), prompt('Enter pow:')));
