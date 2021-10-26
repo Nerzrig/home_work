@@ -9,3 +9,6 @@ function numPow(num, numP = 1){
     return num ** numP;
 }
 console.log(numPow(prompt('Enter number:'), prompt('Enter pow:')));
+function heiwfu(wsjkfj,jfsdgh) {
+    
+}
