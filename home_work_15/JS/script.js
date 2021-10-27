@@ -1,4 +1,4 @@
-function padStr(str, strLen, strSym, leftOrRight = true) {
+function padStr(str, strLen, strSym, leftOrRight = 'true') {
     let message = '';
     if (str === null || str.trim() === '')
         message += 'You interrupted input of the string!\r\n';
@@ -6,7 +6,7 @@ function padStr(str, strLen, strSym, leftOrRight = true) {
         message += 'You interrupted the input of the string length!\r\n';
     if (strSym === null || strSym.trim() === '')
         message += 'You interrupted the input of the symbol!\r\n';
-    if (leftOrRight === null || leftOrRight.trim() === '')
+    if (leftOrRight === null || String(leftOrRight.trim()) === '')
         message += 'You interrupted the input of the symbol direction!\r\n';
     if (message !== '') {
         return message;
@@ -14,24 +14,22 @@ function padStr(str, strLen, strSym, leftOrRight = true) {
         if (strLen > str.length) {
             strLen -= str.length;
             if (leftOrRight === true) {
-                for (let i = 0; i < strLen; i++) {
+                for (let n = 0; n < strLen; n++) {
                     str += strSym;
                 }
             } else {
-                for (let i = 0; i < strLen; i++) {
-                    strSym += strSym;
+                for (let m = 0; m < strLen; m++) {
+                    str = strSym + str;
                 }
-                str = strSym + str;
             }
         } else {
-            console.log(str, str.length, strLen)
             str = str.substr(0, strLen);
         }
         return str;
     }
-
-    //if(str.trim() ==='' || strLen.trim() ==='' || isNaN(+strLen) || strSym === '' || leftOrRight === null)
 }
 
+/*console.log(padStr(prompt('Enter the string:'), prompt('Enter the string length:'),
+    prompt('Enter the symbol:')));*/
 console.log(padStr(prompt('Enter the string:'), prompt('Enter the string length:'),
     prompt('Enter the symbol:'), prompt('Enter the add symbol direction:')));
