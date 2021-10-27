@@ -1,5 +1,5 @@
 function arrayFunc(someArray) {
-    let someArrayNew = [];
+    const someArrayNew = [];
     if (someArray.length === 0) {
         return 'Array is empty!';
     }
@@ -14,6 +14,7 @@ function arrayFunc(someArray) {
     return someArrayNew;
 }
 
-//const arr = [1, 2, 3, -1, -2, -3];
+const arr = [1, 2, 3, -1, -2, -3];
+//const arr = [-1, -2, -3, -4, -5, -6];
 //const arr = [];
 console.log(arrayFunc(arr));
