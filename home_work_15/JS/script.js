@@ -1,19 +1,23 @@
-function padStr(str, strLen, strSym, leftOrRight = 'true') {
+function padStr(str, strLen, strSym, leftOrRight = true) {
     let message = '';
-    if (str === null || str === '')
+    if (str === null || str.length() === '') {
         message += 'You interrupted input of the string!\r\n';
-    if (strLen === null || strLen === '')
+    }
+    if (strLen === null || strLen.length() === '') {
         message += 'You interrupted the input of the string length!\r\n';
-    if (strSym === null || strSym === '')
+    }
+    if (strSym === null || strSym.length() === '') {
         message += 'You interrupted the input of the symbol!\r\n';
-    if (leftOrRight === null || leftOrRight === '')
+    }
+    if (leftOrRight === null || leftOrRight.length() === '') {
         message += 'You interrupted the input of the symbol direction!\r\n';
+    }
     if (message !== '') {
         return message;
     }
     if (strLen > str.length) {
         strLen -= str.length;
-        if (leftOrRight === 'true') {
+        if (leftOrRight === true) {
             for (let n = 0; n < strLen; n++) {
                 str += strSym;
             }
