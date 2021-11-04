@@ -1,15 +1,15 @@
 function padStr(str, strLen, strSym, leftOrRight = true) {
     let message = '';
-    if (typeof (str) != "string") {
+    if (!typeof (str) === "string" || str === undefined) {
         message += 'You interrupted input of the string!\r\n';
     }
-    if (strLen === null || !Number.isInteger(strLen)) {
+    if (!Number.isInteger(strLen) || strLen === undefined) {
         message += 'You interrupted input of the string length!\r\n';
     }
-    if (strSym === null) {
+    if (!typeof (strSym) === 'string'/* || strSym === undefined*/) {
         message += 'You must input just ONE symbol!\r\n';
     }
-    if (leftOrRight === null) {
+    if (!typeof (leftOrRight) === 'boolean') {
         message += 'You interrupted input of the symbol direction!\r\n';
     }
     if (message !== '') {
