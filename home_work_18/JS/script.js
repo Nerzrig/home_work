@@ -1,4 +1,5 @@
-function mainFunction(callback) {
+
+function exponentiation(callback) {
     const a = +prompt('Enter the 1-st number:');
     const b = +prompt('Enter the 2-nd number:');
     const result = callback(a, b);
@@ -6,4 +7,4 @@ function mainFunction(callback) {
     //alert(callback(a, b));
 }
 
-mainFunction(Math.pow);
+exponentiation(Math.pow);
