@@ -1,16 +1,16 @@
 function padStr(str, strLen, strSym, leftOrRight = true) {
     let message = '';
-    if (str === null || typeof (str) != "string") {
+    if (typeof (str) != "string") {
         message += 'You interrupted input of the string!\r\n';
     }
     if (strLen === null || !Number.isInteger(strLen)) {
-        message += 'You interrupted the input of the string length!\r\n';
+        message += 'You interrupted input of the string length!\r\n';
     }
     if (strSym === null) {
-        message += 'You myst input just ONE symbol!\r\n';
+        message += 'You must input just ONE symbol!\r\n';
     }
     if (leftOrRight === null) {
-        message += 'You interrupted the input of the symbol direction!\r\n';
+        message += 'You interrupted input of the symbol direction!\r\n';
     }
     if (message !== '') {
         return message;
