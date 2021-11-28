@@ -5,7 +5,7 @@ const arr2 = [4, 5, 6];
 const arr3 = arr1.concat(arr2);
 console.log(arr3);
 */
-//2. Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1].
+//2. Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1]
 /*
 const arr1 = [1, 2, 3];
 const arr2 = arr1.reverse();
