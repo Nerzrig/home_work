@@ -1,135 +1,143 @@
-//1. Даны два массива: [1, 2, 3] и [4, 5, 6]. Объедините их вместе.
-/*
-const arr1 = [1, 2, 3];
-const arr2 = [4, 5, 6];
-const arr3 = arr1.concat(arr2);
-console.log(arr3);
-*/
-//2. Дан массив [1, 2, 3]. Сделайте из него массив [3, 2, 1]
-/*
-const arr1 = [1, 2, 3];
-const arr2 = arr1.reverse();
-console.log(arr2);
-*/
-//Дан массив [1, 2, 3]. Добавьте ему в конец элементы 4, 5, 6.
-/*
-const arr1 = [1, 2, 3];
-arr1.push(4, 5, 6);
-console.log(arr1);
-*/
-//4. Дан массив [1, 2, 3]. Добавьте ему в начало элементы 4, 5, 6.
-/*
-const arr1 = [1,2,3];
-arr1.unshift(4, 5, 6);
-console.log(arr1);
-*/
-//5. Дан массив ['js', 'css', 'jq']. Выведите на экран первый элемент.
-/*
-const arr1 = ['js', 'css', 'jq'];
-console.log(arr1.shift());
-*/
-//6. Дан массив ['js', 'css', 'jq']. Выведите на экран последний элемент.
-/*
-const arr1 = ['js', 'css', 'jq'];
-console.log(arr1.pop());
-*/
-//7 Дан массив [1, 2, 3, 4, 5]. С помощью метода запишите в новый массив элементы [1, 2, 3].
-/*
-const arr1 = [1, 2, 3, 4, 5];
-const arr2 = arr1.slice(0,3);
-console.log(arr2);
-*/
-//8. Дан массив [1, 2, 3, 4, 5]. С помощью метода запишите в новый массив элементы [4, 5].
-/*
-const arr1 = [1, 2, 3, 4, 5];
-const arr2 = arr1.slice(arr1.length-2, arr1.length);
-console.log(arr2);
-*/
-//9. Дан массив [1, 2, 3, 4, 5]. С помощью метода преобразуйте массив в [1, 4, 5].
-/*
-const arr1 = [1, 2, 3, 4, 5];
-arr1.splice(1, 2);
-console.log(arr1);
-*/
-//10. Дан массив [1, 2, 3, 4, 5]. С помощью метода запишите в новый массив элементы [2, 3, 4].
-/*
-const arr1 = [1, 2, 3, 4, 5];
-const arr2 = arr1.slice(1,4);
-console.log(arr2);
-*/
-//11. Дан массив [1, 2, 3, 4, 5]. С помощью метода сделайте из него массив [1, 2, 3, 'a', 'b', 'c', 4, 5].
-/*
-const arr1 = [1, 2, 3, 4, 5];
-arr1.splice(3, 0, 'a,', 'b', 'c');
-console.log(arr1);
-*/
-//12. Дан массив [1, 2, 3, 4, 5]. С помощью метода сделайте из него массив [1, 'a', 'b', 2, 3, 4, 'c', 5, 'e'].
-/*
-const arr1 = [1, 2, 3, 4, 5];
-arr1.splice(1, 4, 'a', 'b', 2, 3, 4, 'c', 5, 'e');
-console.log(arr1);
-*/
-//13. Дан массив [3, 4, 1, 2, 7]. Отсортируйте его.
-/*
-const arr1 = [3, 4, 1, 2, 7];
-console.log(arr1.sort());
-*/
-//14. Дан массив с числами [5, 6, 7, 8, 9]. Найдите сумму этих чисел.
-/*
-const arr1 = [5, 6, 7, 8, 9];
-const result = arr1.reduce((sum, current) => sum + current, 0);
-console.log (result);
-*/
-//15. Дан массив с числами [5, 6, 7, 8, 9]. Сделайте из него массив, состоящий из квадратов этих чисел.
-/*
-const arr1 = [5, 6, 7, 8, 9];
-arr1.forEach((item, index, array) => {
-    array[index] = item*item;
-});
-console.log(arr1);
-*/
-//16. Дан массив с числами [1,-3, 5, 6,-7, 8, 9,-11]. Оставьте в нем только отрицательные числа.
-/*
-const arr1 = [1, -3, 5, 6, -7, 8, 9, -11];
-const arr2 = arr1.filter((item) => item > 0);
-console.log(arr2);
-*/
-//17. Дан массив с числами [1,-3, 5, 6,-7, 8, 9,-11]. Оставьте в нем только четные числа.
-/*
-const arr1 = [1,-3, 5, 6,-7, 8, 9,-11];
-const arr2 = arr1.filter((item) => item % 2 === 0);
-console.log(arr2);
-*/
-//18. Дан массив со строками ['aaa', 'aaaqqq', 'zzzqq', 'zz', 'qsaa', 'q', 'az'].
-//Оставьте в нем только те строки, длина которых больше 5-ти символов.
-/*
-const arr1 = ['aaa', 'aaaqqq', 'zzzqq', 'zz', 'qsaa', 'q', 'az'];
-const arr2 = arr1.filter(function (item){
-    if (item.length > 5){
-        return item;
+//1. Создайте массив arr = [‘a’, ‘b’, ‘c’, ‘d’] и с его помощью выведите на экран строку ‘a+b, c+d’.
+(function () {
+    const arr = ['a', 'b', 'c', 'd'];
+    const str = arr.join();
+    const newStr = str.replace(/,/gi, function (value, index) {
+        if(index % 2 !== 0 && index !== 3){
+            return '+'
+        }
+        else return ',';
+    });
+
+    console.log('Exercise # 1 - ' + newStr)
+})();
+
+//2. Создайте массив arr с элементами 2, 5, 3, 9.
+//Умножьте первый элемент массива на второй, а третий элемент на четвертый.
+//Результаты сложите, присвойте переменной result. Выведите на экран значение этой переменной
+(function () {
+    const arr = [2, 5, 3, 9];
+    const arr2 = arr.splice(2, 2);
+
+    function multiplyArr(arr1, arr2) {
+        const result = arr1.reduce((result, current) => result * current, 1) +
+            arr2.reduce((result, current) => result * current, 1);
+        console.log('Exercise # 2 - ' + result);
     }
-})
-console.log(arr2);
-*/
-//19. Дан массив, в нем могут быть обычные элементы и подмассивы, например [1, 2, [3, 4], 5, [6, 7]].
-//Оставьте в нем только подмассивы.
-/*
-const arr1 = [1, 2, [3, 4], 5, [6, 7]];
-const arr2 = arr1.filter(function (item){
-    if (typeof (item) === 'object'){
-        return item;
+
+    multiplyArr(arr, arr2);
+})();
+
+//3. Дан массив [ [1, 2, 3], [4, 5, 6], [7,8,9] ]. Выведите на экран цифру 4 из этого массива.
+(function () {
+    const arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+    const newArr = arr.flat();
+    console.log('Exercise # 3 - ' + newArr.find(item => item === 4));
+
+})();
+
+//4. Дан объект {js:[‘jQuery’, ‘Angular’], php: ‘hello’, css: ‘world’}. Выведите с его помощью слово ‘jQuery’.
+(function () {
+    const obj = {
+        js: ['jQuery', 'Angular'],
+        php: 'hello',
+        css: 'world'
     }
-});
-console.log(arr2);
-*/
-//20. Дан массив с числами [5,-3, 6,-5, 0,-7, 8, 9]. Посчитайте количество отрицательных чисел в этом массиве.
-/*
-const arr1 = [5,-3, 6,-5, 0,-7, 8, 9];
-let count = null;
-for(let i = 0; i < arr1.length; i ++){
-    if(arr1[i] < 0){
-        count++;
+    console.log('Exercise # 4 - ' + obj.js[0]);
+})();
+
+//5. Заполните массив следующим образом: в первый элемент запишите ‘x’, во второй ‘xx’, в третий ‘xxx’ и так далее.
+(function () {
+    const arr = [];
+    let str = 'x';
+    for (let i = 0; i < 12; i++) {
+        arr.push(str);
+        str += 'x';
     }
-}
-console.log(count);
-*/
+    console.log('Exercise # 5 - ' + arr);
+})();
+
+//6. Заполните массив следующим образом: в первый элемент запишите ‘1’, во второй ’22’, в третий ‘333’ и так далее.
+(function () {
+    const arr = [];
+    let str = '';
+    for (let i = 1; i < 10; i++) {
+        for (let n = 0; n < i; n++) {
+            str += String(i);
+        }
+        arr.push(str);
+        str = '';
+    }
+    console.log('Exercise # 6 - ' + arr);
+})();
+
+//7. Сделайте функцию arrayFill, которая будет заполнять массив заданными значениями.
+//Первым параметром функция принимает значение, которым заполнять массив,
+//а вторым — сколько элементов должно быть в массиве.
+//Пример: arrayFill(‘x’, 5) сделает массив [‘x’, ‘x’, ‘x’, ‘x’, ‘x’].
+
+(function () {
+    function arrayFill(value, count, arr = []) {
+        for (let i = 0; i < count; i++) {
+            arr.push(value);
+        }
+        return arr;
+    }
+
+    console.log('Exercise # 7 - ' + arrayFill('x', 5));
+})();
+
+//8. Дан массив с числами. Узнайте сколько элементов с начала массива надо сложить,
+//чтобы в сумме получилось больше 10-ти.
+
+(function () {
+    const arr = [-1, -2, -3, 4, 5, 6, 7, 8, 9, 10];
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+        if (sum > 10) {
+            console.log('Exercise # 8 - ' + (i + 1));
+            break;
+        }
+    }
+})();
+
+//9. Дан массив с числами. Не используя метода reverse переверните его элементы в обратном порядке.
+(function () {
+    const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const reverseArr = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reverseArr.push(arr[i]);
+    }
+    console.log('Exercise # 9 - ' + reverseArr);
+})();
+
+//10. Дан двухмерный массив с числами, например [[1, 2, 3], [4, 5], [6]].
+//Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+(function () {
+    const arr = [[1, 2, 3], [4, 5], [6]];
+    const flatArr = arr.flat();
+    console.log('Exercise # 10 - ' + flatArr.reduce((sum, current) => sum + current, 0));
+})();
+
+//11. Дан трехмерный массив с числами, например [[[1, 2], [3, 4]], [[5, 6], [7, 8]]].
+//Найдите сумму элементов этого массива. Массив, конечно же, может быть произвольным.
+//СДЕЛАЛ ДЛЯ СЕБЯ АНАЛОГ FLAT!!! В ПРЕДЫДУЩИХ ЗАДАНИЯХ ЮЗАЮ НЕПОСРЕДСТВЕННО FLAT,
+//ТАК ЧТО Я В КУРСЕ ПРО ЕГО СУЩЕСТВОВАНИЕ (:
+(function () {
+    const originalArr = [4, 6, [11, 3, 9, [1, 2], 2, 8, [3, 4]], [1, [5, 6], [7, 0, 8], 3]];
+    let finalArr = [];
+
+    function arrDeployment(arr) {
+        for (let i = 0; i < arr.length; i++) {
+            if (Array.isArray(arr[i])) {
+                arrDeployment(arr[i])
+            } else {
+                finalArr.push(arr[i]);
+            }
+        }
+        return finalArr.reduce((sum, current) => sum + current, 0);
+    }
+
+    console.log('Exercise # 11 - ' + arrDeployment(originalArr));
+})();
