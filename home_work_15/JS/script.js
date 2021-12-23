@@ -1,15 +1,20 @@
-function padStr(str, strLen, strSym, leftOrRight = 'true') {
+function padStr(str, strLen, strSym, leftOrRight = true) {
     let message = '';
-    if (str === null || str === '')
+    if (str === null || str.trim() === '') {
         message += 'You interrupted input of the string!\r\n';
-    if (strLen === null || strLen === '')
+    }
+    if (strLen === null || strLen.trim() === '') {
         message += 'You interrupted the input of the string length!\r\n';
-    if (strSym === null || strSym === '')
+    }
+    if (strSym === null || strSym.trim() === '') {
         message += 'You interrupted the input of the symbol!\r\n';
-    if (leftOrRight === null || leftOrRight === '')
-        message += 'You interrupted the input of the symbol direction!\r\n';
+    }
+    if (!typeof (leftOrRight) === 'boolean') {
+    message += 'You interrupted the input of the symbol direction!\r\n';
+}
     if (message !== '') {
         return message;
+
     }
     if (strLen > str.length) {
         strLen -= str.length;
@@ -27,7 +32,6 @@ function padStr(str, strLen, strSym, leftOrRight = 'true') {
     }
     return str;
 }
-
 
 console.log(padStr('hello', 8, '*'));
 console.log(padStr('hello', 6, '*', false));
