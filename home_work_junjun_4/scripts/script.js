@@ -3,6 +3,14 @@
 let arr = [];
 
 arr = new Proxy(arr, {
+    get(target, prop) {
+        if(prop in target) {
+            //return JSON.stringify(target[prop]);
+        } else {
+            return 0;
+        }
+    },
+
     set(target, prop, value) {
         if (prop === "length") {
             return "Ok!";
@@ -11,10 +19,9 @@ arr = new Proxy(arr, {
             console.warn("You can't add non 'object' type data!");
             return "You can't add non 'object' type data!";
         }
-        console.log(value, " is pushed to array ", arr);
         target[prop] = value;
+        console.log(value, "is pushed to array", arr);
         return true;
-
     }
 });
 
@@ -24,6 +31,9 @@ const obj = {
 }
 const emptyObj = Object.create(null);
 
-arr.push(obj);//error
-arr.push(1);//error
-arr.push(emptyObj);
+arr.push(obj);//You can't add non 'object' type data!
+arr.push(1);//You can't add non 'object' type data!
+arr.push(emptyObj);//is pushed to array
+
+const value = arr[0];
+console.log(value);
